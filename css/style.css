@@ -95,7 +95,7 @@ a {
 	font-size: 80px;
 }
 
-.email a:hover {
+.email a:hover, .item a:hover {
 	color: white;
 }
 
@@ -148,6 +148,10 @@ a {
 
 	.name {
 		font-size: 57px;
+	}
+
+	.carousel {
+		margin-top: 100px;
 	}
 }
 
