@@ -17,6 +17,6 @@ document.querySelector('.sidebar-btn').addEventListener('click', function(event)
 });
 
 function delay (URL) {
-    setTimeout( function() { window.location = URL }, 300 );
+    setTimeout( function() { window.location = URL }, 800 );
     $('body').addClass('body');
 }
