@@ -144,6 +144,10 @@ a {
 		font-size: 16px;
 	}
 
+	.front-image {
+		max-width: 150px;
+	}
+
 	.sidebar-btn {
 		top: 0px;
 		right: 10px;
