@@ -1,0 +1,80 @@
+<html>
+<head>
+  <meta name="viewport" content="width = device-width, initial-scale = 1.0 maximum-scale=1.0, user-scalable=0">
+  <title>Signature Demo</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+  <!-- Compiled and minified JavaScript -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="header">
+    <div class="center">
+      <button class="btn"><i class="fa fa-github" aria-hidden="true"></i> Source</button>
+      <button class="btn"><i class="fa fa-cloud-download" aria-hidden="true"></i> Download</button>
+    </div>
+  </div>
+  <br>
+  <br>
+	<div class="container z-depth-4 ">
+	    <div class="row">
+	    	<div class="col m6 center">
+	        	<canvas id="sketch" width="300px" height="170px" style="background-color: #F5F5F5; background-image: url('bg.png'); background-size: 300px 170px"/>
+	    	</div>
+	    	<div class="col m6 center">
+	        	<img id="image" width="300px" height="170px" class="result-img">
+	    	</div>
+	    </div>
+		<br>
+	    <div class="row">
+	    	<div class="col s12 center">
+	        	<button type="button" class="btn" onclick="exportImage()" id="signature-save">Save</button>
+	        	<button type="button" class="btn" onclick="clearAll();">Clear</button>
+	    	</div>
+	    </div>
+	    <div class="container center">
+	      <textarea id="signature" cols="100" rows="100"></textarea>
+	    </div>
+	    <br>
+	</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+<script src="js/sketcher.js"></script>
+<script src="js/modernizr.js"></script>
+<script src="js/trigonometry.js"></script>
+<script type="text/javascript">
+    var sketcher = null;
+    var brush = null;
+
+      brush = new Image();
+        brush.src = 'brush2.png';
+        brush.onload = function(){
+        sketcher = new Sketcher( "sketch" );
+        }
+
+    function exportImage() {
+      var final = sketcher.toDataURL();
+      document.querySelector('#signature').value = final;
+      document.querySelector('#signature-save').disabled = true;
+      document.querySelector('#signature-save').innerHTML = "Saved";
+      document.querySelector('#image').src = final;
+    }
+    function clearAll(){
+      sketcher.clear();
+      document.querySelector('#image').src = "";
+    }
+    document.getElementById("sketch").onwheel = function(event){
+        event.preventDefault();
+    };
+
+    document.getElementById("sketch").onmousewheel = function(event){
+        event.preventDefault();
+    };
+
+    document.getElementById("sketch").addEventListener('touchmove', function(event){
+        event.preventDefault();
+    });
+  </script>
+</body>
+</html>

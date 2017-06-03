@@ -1,0 +1,53 @@
+body{
+  background-color: #78909C;
+}
+#header{
+  background-color: rgba(255,255,255,0.9);
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.5);
+  text-align: center;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  padding: 10px;
+  line-height: auto;
+}
+.container{
+  background-color: rgba(255,255,255,0.5);
+}
+.seth{
+  height: 85%;
+}
+textarea{
+  height: 250px;
+}
+canvas{
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.result-img {
+  background-color: white;
+  margin: 10px 10px 0 0;
+}
+.fa {
+  float: left;
+  font-size: 30px !important;
+  margin-right: 5px;
+}
+@media only screen and (min-width: 993px){
+	.container {
+	   width: 85%;
+  }
+}
+@media only screen and (max-width: 855px){
+  .row .col.m6 {
+  	width: 100%;
+  	margin-left: auto;
+  	left: auto;
+  	right: auto;
+  }
+  canvas{
+    text-align: left;
+  	margin : 10px auto;
+  }
+  #image{
+  	margin : 10px auto;
+  }
+}
