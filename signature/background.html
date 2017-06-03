@@ -20,12 +20,12 @@
 	<div class="container z-depth-4 ">
       <div class="row center">
         <div class="col s12" style="margin-top:10px">
-          <a href="background.html"><button type="button" class="btn" name="button">Draw With Background</button></a>
+          <a href="/signature"><button type="button" class="btn" name="button">Draw Without Background</button></a>
         </div>
       </div>
 	    <div class="row">
 	    	<div class="col m6 center">
-	        	<canvas id="sketch" width="300px" height="170px" style="background-color: #F5F5F5; background-image: url('bg.png'); background-size: 300px 170px"/>
+	        	<canvas id="sketch" width="300px" height="170px" style="background-color: #F5F5F5;"/>
 	    	</div>
 	    	<div class="col m6 center">
 	        	<img id="image" width="300px" height="170px" class="result-img">
@@ -49,6 +49,14 @@
 <script src="js/modernizr.js"></script>
 <script src="js/trigonometry.js"></script>
 <script type="text/javascript">
+    var sketcher = document.getElementById('sketch');
+    var ctx = sketcher.getContext('2d');
+    var img = new Image;
+    img.onload = function(){
+      ctx.drawImage(img,20,20); // Or at whatever offset you like
+    };
+    img.src = "github.png";
+
     var sketcher = null;
     var brush = null;
 
