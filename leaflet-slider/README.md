@@ -10,4 +10,3 @@ This is the demo showing how we can use 2 different Leaflet Maps to compare, or 
 	* Zoom Level
 	* Both the Tile Layer urls
 * To change the handle, replace `img/handle.gif` with your own `handle.gif` file.
-* To change the dimensions of the map, change the dimension of the `container` class inside the `index.html` style tag.
